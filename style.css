@@ -122,3 +122,30 @@ html, body {
 .search-item:hover {
   background: #f4f8ff;
 }
+
+
+/* ========== 手机平板自动放大按钮【不影响电脑】 ========== */
+@media screen and (max-width: 800px) {
+  /* 图层开关按钮 */
+  .leaflet-control-layers-toggle{
+    width: 50px !important;
+    height: 50px !important;
+    background-size: 30px !important;
+  }
+  .leaflet-control-layers{
+    font-size: 17px !important;
+  }
+
+  /* 所有普通按钮统一放大 */
+  button{
+    font-size: 17px !important;
+    padding: 12px 18px !important;
+  }
+
+  /* 景点文字字体放大 */
+  .txtName{
+    font-size: 15px !important;
+  }
+}
+
+/* ========== 地图点位、文字随缩放变大 ========== */
