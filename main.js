@@ -1469,3 +1469,30 @@ fetch("data/bianjie.json")
     console.error("边界加载错误",err);
 });
 
+
+// 点位文字随地图缩放自动变大
+map.on('zoomend',function(){
+    let z = map.getZoom();
+    let s = 1;
+
+    if(z <= 9){
+        s = 0.7;
+    }else if(z <= 11){
+        s = 1;
+    }else if(z <= 13){
+        s = 1.2;
+    }else{
+        s = 1.5;
+    }
+
+    // 点位放大
+    document.querySelectorAll(".leaflet-marker-icon").forEach(function(dom){
+        dom.style.transform = "scale("+s+")";
+        dom.style.transformOrigin = "center bottom";
+    });
+
+    // 文字放大
+    document.querySelectorAll(".txtName").forEach(function(dom){
+        dom.style.fontSize = (12 * s) + "px";
+    });
+});
