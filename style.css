@@ -124,47 +124,72 @@ html, body {
 }
 
 
-/* ========== 手机平板自动放大按钮【不影响电脑】 ========== */
-@media screen and (max-width: 800px) {
-  /* 图层开关按钮 */
-  .leaflet-control-layers-toggle{
-    width: 50px !important;
-    height: 50px !important;
-    background-size: 30px !important;
+/* ========== 手机/平板端 按钮&文字适配【合并版】 ========== */
+@media screen and (max-width: 850px) {
+  /* 1. 图层开关按钮（你原来的样式保留，我帮你缩小了一点，不挡地图） */
+  .leaflet-control-layers-toggle {
+    width: 45px !important;
+    height: 45px !important;
+    background-size: 28px !important;
   }
-  .leaflet-control-layers{
-    font-size: 17px !important;
-  }
-
-  /* 所有普通按钮统一放大 */
-  button{
-    font-size: 17px !important;
-    padding: 12px 18px !important;
+  .leaflet-control-layers {
+    font-size: 14px !important;
   }
 
-  /* 景点文字字体放大 */
-  .txtName{
+  /* 2. 所有普通按钮（统一缩小，避免太大） */
+  button {
+    font-size: 14px !important;
+    padding: 8px 12px !important;
+  }
+
+  /* 3. 景点文字（保留放大） */
+  .txtName {
     font-size: 15px !important;
   }
-}
 
-/* ========== 地图点位、文字随缩放变大 ========== */
-
-
-
-/* 仅手机平板：切换按钮移左下角 + 缩小 */
-@media screen and (max-width:900px){
-
-  .topBtn{
-    top: auto  !important;
-    left: 15px !important;
-    bottom: 20px !important;
+  /* 4. 把「地图/卫星」切换按钮移到左下角 */
+  .topBtn {
+    position: absolute !important;
+    top: auto !important;
+    left: 10px !important;
+    bottom: 15px !important;
+    right: auto !important;
+    z-index: 1000 !important;
   }
-
-  .topBtn button{
+  .topBtn button {
     font-size: 13px !important;
-    padding: 5px 9px !important;
-    margin: 2px 0 !important;
+    padding: 6px 10px !important;
+    margin: 3px 0 !important;
+    display: block !important;
+    width: 70px !important;
   }
 
+  /* 5. 调整右下角功能按钮，和左下角错开 */
+  .control-btn-group {
+    position: absolute !important;
+    bottom: 15px !important;
+    right: 10px !important;
+    left: auto !important;
+  }
+  .control-btn-group button {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+    margin: 3px 0 !important;
+    display: block !important;
+    width: 90px !important;
+  }
+
+  /* 6. 搜索框移到顶部居中，避开切换按钮 */
+  #search-wrapper {
+    position: absolute !important;
+    top: 10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 1000 !important;
+  }
+  #search-wrapper input,
+  #search-wrapper button {
+    font-size: 13px !important;
+    padding: 6px 10px !important;
+  }
 }
