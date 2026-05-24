@@ -149,3 +149,24 @@ html, body {
 }
 
 /* ========== 地图点位、文字随缩放变大 ========== */
+
+
+
+/* ========== 手机端按钮位置调整 ========== */
+@media screen and (max-width: 850px) {
+  /* 把右下角按钮移到左下角 */
+  #control-panel, /* 替换成你实际的按钮容器ID/类名 */
+  .control-btn-group { /* 替换成你实际的按钮容器类名 */
+    position: absolute !important;
+    bottom: 20px !important;
+    left: 15px !important;
+    right: auto !important;
+  }
+
+  /* 调整按钮排列，改成上下堆叠 */
+  #control-panel button,
+  .control-btn-group button {
+    display: block !important;
+    margin: 8px 0 !important;
+  }
+}
