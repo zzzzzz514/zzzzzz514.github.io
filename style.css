@@ -152,21 +152,19 @@ html, body {
 
 
 
-/* ========== 手机端按钮位置调整 ========== */
-@media screen and (max-width: 850px) {
-  /* 把右下角按钮移到左下角 */
-  #control-panel, /* 替换成你实际的按钮容器ID/类名 */
-  .control-btn-group { /* 替换成你实际的按钮容器类名 */
-    position: absolute !important;
-    bottom: 20px !important;
+/* 仅手机平板：切换按钮移左下角 + 缩小 */
+@media screen and (max-width:900px){
+
+  .topBtn{
+    top: auto  !important;
     left: 15px !important;
-    right: auto !important;
+    bottom: 20px !important;
   }
 
-  /* 调整按钮排列，改成上下堆叠 */
-  #control-panel button,
-  .control-btn-group button {
-    display: block !important;
-    margin: 8px 0 !important;
+  .topBtn button{
+    font-size: 13px !important;
+    padding: 5px 9px !important;
+    margin: 2px 0 !important;
   }
+
 }
